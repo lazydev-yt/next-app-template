@@ -9,10 +9,8 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "axios": "^0.26.1",
-    "catenary-curve": "^1.0.1",
     "ethers": "^5.6.1",
     "framer-motion": "^6",
-    "lazy-brush": "^1.0.1",
     "multer": "^1.4.4",
     "next": "^12.1.4",
     "next-connect": "^0.12.2",
@@ -22,7 +20,6 @@
     "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
     "react-dropzone": "^12.0.4",
-    "react-resize-detector": "^7.0.0",
     "wagmi": "^0.2.24"
   },
   "scripts": {
