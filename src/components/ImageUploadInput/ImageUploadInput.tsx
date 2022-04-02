@@ -65,7 +65,7 @@ export const ImageUploadInput: React.FC<ImageUploadInputProps> = ({
         )}
       </Box>
       {image && !readOnly && (
-        <Button size='xs' onClick={() => onChange(null)}>
+        <Button size='xs' onClick={() => onChange(null)} colorScheme='blue'>
           Remove Image
         </Button>
       )}

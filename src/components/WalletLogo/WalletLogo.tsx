@@ -4,7 +4,7 @@ import { WalletConnectIcon } from 'components/icons/WalletConnectIcon'
 import { WalletLinkIcon } from 'components/icons/WalletLinkIcon'
 
 interface WalletLogoProps {
-  logo: string
+  logo: 'walletConnect' | 'injected' | 'walletLink' | string
 }
 
 export const WalletLogo: React.FC<WalletLogoProps> = ({ logo }) => {
