@@ -19,6 +19,10 @@ interface TopBarViewProps {
   accountAddress?: string
   networkName?: string
   onOpenWalletConnect: () => void
+
+  isAuthenticated?: boolean
+  isAuthenticating?: boolean
+  onSignIn?: () => void
 }
 
 export const TopBarView: React.FC<TopBarViewProps> = ({
@@ -30,6 +34,9 @@ export const TopBarView: React.FC<TopBarViewProps> = ({
   accountAddress,
   networkName,
   onOpenWalletConnect,
+  isAuthenticated,
+  isAuthenticating,
+  onSignIn,
 }) => {
   return (
     <Box
@@ -68,17 +75,31 @@ export const TopBarView: React.FC<TopBarViewProps> = ({
             marginRight={2}
           />
           {accountAddress && networkName ? (
-            <Button size='sm' onClick={onDisconnect}>
-              Disconnect {networkName}({accountAddress.substring(0, 6)}...)
-            </Button>
+            <>
+              <Button size='sm' onClick={onDisconnect}>
+                Disconnect {networkName}({accountAddress.substring(0, 6)}...)
+              </Button>
+              {!isAuthenticated && (
+                <Button
+                  marginLeft={2}
+                  size='sm'
+                  onClick={onSignIn}
+                  isLoading={isAuthenticating}
+                >
+                  Sign-In
+                </Button>
+              )}
+            </>
           ) : (
-            <Button
-              size='sm'
-              onClick={onOpenWalletConnect}
-              leftIcon={<WalletIcon width={20} height={20} />}
-            >
-              Connect Wallet
-            </Button>
+            <>
+              <Button
+                size='sm'
+                onClick={onOpenWalletConnect}
+                leftIcon={<WalletIcon width={20} height={20} />}
+              >
+                Connect Wallet
+              </Button>
+            </>
           )}
         </Box>
       </Container>
