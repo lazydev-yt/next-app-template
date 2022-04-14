@@ -54,7 +54,7 @@ export const useAuth = create<AuthState>(
     }),
     {
       name: 'auth-app',
-      getStorage: () => sessionStorage,
+      getStorage: () => localStorage,
     },
   ),
 )

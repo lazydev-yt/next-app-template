@@ -82,6 +82,10 @@ export const TopBar: React.FC<TopBarProps> = ({ children }) => {
         },
       })
     }
+    if (accountData && auth.user && auth.user.sub !== accountData.address) {
+      disconnect()
+      auth.logout()
+    }
   }, [accountData])
 
   return (
